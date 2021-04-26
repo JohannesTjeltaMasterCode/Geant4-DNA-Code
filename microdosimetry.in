@@ -1,0 +1,30 @@
+#Energi deposisjoner langs en sylindrisk boks 
+#/score/create/cylinderMesh Target_1
+#/score/mesh/cylinderSize 5. 40 cm
+#/score/mesh/nBin 1 1000 1 
+#/score/mesh/translate/xyz 0. 0. 0. cm
+#/score/quantity/energyDeposit eDep
+#/score/drawProjection Target_1 eDep
+
+#/score/create/boxMesh Target_2
+#/score/mesh/boxSize 5. 5. 0.1 cm
+#/score/mesh/nBin 30 30 3
+#/score/mesh/translate/xyz 0. 0. 38. cm
+#/score/quantity/energyDeposit eDep
+#/score/drawProjection Target_2 eDep
+
+
+
+
+#/tracking/verbose 2
+/run/verbose 2
+/process/eLoss/verbose 1
+/gun/particle proton
+/gun/energy 15.5 MeV
+/run/initialize
+/run/beamOn 1
+
+
+/vis/ogl/set/displayListLimit 1000
+
+
